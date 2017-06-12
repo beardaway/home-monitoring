@@ -57,8 +57,8 @@
 				7120AE031EEF35A600C5A236 /* AppDelegate.swift */,
 				7120AE051EEF35A600C5A236 /* ViewController.swift */,
 				7120AE071EEF35A600C5A236 /* Main.storyboard */,
-				7120AE0A1EEF35A600C5A236 /* Assets.xcassets */,
 				7120AE0C1EEF35A600C5A236 /* LaunchScreen.storyboard */,
+				7120AE0A1EEF35A600C5A236 /* Assets.xcassets */,
 				7120AE0F1EEF35A600C5A236 /* Info.plist */,
 			);
 			path = "home-monitoring";
