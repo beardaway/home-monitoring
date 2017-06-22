@@ -21,17 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-Jc-fA2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-Lg-Nos">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Temperature" translatesAutoresizingMaskIntoConstraints="NO" id="n0v-Fk-zu9">
+                                <rect key="frame" x="48" y="439" width="83" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My5-UW-seh">
+                                <rect key="frame" x="48" y="614" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="BYg-Jc-fA2" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="AzX-YO-b4Q"/>
-                            <constraint firstItem="BYg-Jc-fA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="W49-TH-S1J"/>
-                            <constraint firstItem="BYg-Jc-fA2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t7K-HL-5Q7"/>
-                            <constraint firstItem="BYg-Jc-fA2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zPO-5A-rFg"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,5 +47,6 @@
     </scenes>
     <resources>
         <image name="Background" width="375" height="667"/>
+        <image name="Temperature" width="95" height="229"/>
     </resources>
 </document>

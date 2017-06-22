@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		711CAA1F1EFC625B00611DD2 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711CAA1E1EFC625B00611DD2 /* EstimoteSDK.framework */; };
 		7120AE041EEF35A600C5A236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120AE031EEF35A600C5A236 /* AppDelegate.swift */; };
 		7120AE061EEF35A600C5A236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120AE051EEF35A600C5A236 /* ViewController.swift */; };
 		7120AE091EEF35A600C5A236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7120AE071EEF35A600C5A236 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		711CAA1E1EFC625B00611DD2 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		711CAA211EFC62A200611DD2 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		7120AE001EEF35A600C5A236 /* home-monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "home-monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7120AE031EEF35A600C5A236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7120AE051EEF35A600C5A236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,12 +32,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711CAA1F1EFC625B00611DD2 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		711CAA201EFC626600611DD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				711CAA1E1EFC625B00611DD2 /* EstimoteSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		711CAA221EFC63F800611DD2 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				711CAA211EFC62A200611DD2 /* ObjCBridge.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		7120ADF71EEF35A600C5A236 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +80,8 @@
 				7120AE0C1EEF35A600C5A236 /* LaunchScreen.storyboard */,
 				7120AE0A1EEF35A600C5A236 /* Assets.xcassets */,
 				7120AE0F1EEF35A600C5A236 /* Info.plist */,
+				711CAA221EFC63F800611DD2 /* Headers */,
+				711CAA201EFC626600611DD2 /* Frameworks */,
 			);
 			path = "home-monitoring";
 			sourceTree = "<group>";
@@ -216,6 +238,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -264,6 +287,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -274,6 +298,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E6K6HN5W76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/home-monitoring",
+				);
 				INFOPLIST_FILE = "home-monitoring/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.home-monitoring";
@@ -287,6 +315,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E6K6HN5W76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/home-monitoring",
+				);
 				INFOPLIST_FILE = "home-monitoring/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.home-monitoring";
