@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate{
     
     
+    @IBOutlet weak var tempDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureInfoLabel: UILabel!
+    @IBOutlet weak var pressureInfoLabel: UILabel!
+    @IBOutlet weak var pressureDescriptionLabel: UILabel!
     
     let beaconConnectionStatusPopUp = UIAlertController(title: "Detecting beacon", message: "Looks like you're not connected to the beacon yet. Wait a few seconds!", preferredStyle: UIAlertControllerStyle.alert)
     
@@ -25,14 +28,12 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let beaconFilter = ESTDeviceFilterLocationBeacon(identifier: self.monitoringDeviceIdentifier)
         self.monitoringDeviceManager.startDeviceDiscovery(with: beaconFilter)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         self.present(beaconConnectionStatusPopUp, animated: true, completion: nil)
         
     }
@@ -49,9 +50,23 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         print("Connection Output Status: Connected")
         
         self.beaconConnectionStatusPopUp.dismiss(animated: true, completion: nil)
+        
+        let pressureInfo = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!/100)
         let temperatureInfo = Int((monitoringDevice?.settings?.sensors.temperature.getValue())!)
-        let pressureInfo = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!)
+        
+        switch temperatureInfo {
+        case 1...10:
+            tempDescriptionLabel.text = "You have really cold in your apartment 😱"
+        case 11...20:
+            tempDescriptionLabel.text = "Well yep, it some kinda nice but could be warmer 🤔"
+        case 21...30:
+            tempDescriptionLabel.text = "It is super-hot in here 😎👙"
+        default:
+            tempDescriptionLabel.text = "Your temperature is really weird, better do something with that 🙋‍♂️🙋"
+        }
+        
         temperatureInfoLabel.text = "\(temperatureInfo) °C"
+        pressureInfoLabel.text = "\(pressureInfo) hPa"
     }
     
     func estDevice(_ device: ESTDeviceConnectable, didFailConnectionWithError error: Error) {
@@ -61,7 +76,6 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
         print("Connection Output Status: Disconnected")
     }
-
 
 }
 
