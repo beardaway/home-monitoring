@@ -13,6 +13,8 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     
     @IBOutlet weak var temperatureInfoLabel: UILabel!
     
+    let beaconConnectionStatusPopUp = UIAlertController(title: "Detecting beacon", message: "Looks like you're not connected to the beacon yet. Wait a few seconds!", preferredStyle: UIAlertControllerStyle.alert)
+    
     var monitoringDevice: ESTDeviceLocationBeacon?
     let monitoringDeviceIdentifier: String = "4e4fdfa0dc89ddde6397211621338628"
     lazy var monitoringDeviceManager: ESTDeviceManager = {
@@ -28,6 +30,13 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         self.monitoringDeviceManager.startDeviceDiscovery(with: beaconFilter)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.present(beaconConnectionStatusPopUp, animated: true, completion: nil)
+        
+    }
+    
     func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
         guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
         self.monitoringDeviceManager.stopDeviceDiscovery()
@@ -38,7 +47,10 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     
     func estDeviceConnectionDidSucceed(_ device: ESTDeviceConnectable) {
         print("Connection Output Status: Connected")
+        
+        self.beaconConnectionStatusPopUp.dismiss(animated: true, completion: nil)
         let temperatureInfo = Int((monitoringDevice?.settings?.sensors.temperature.getValue())!)
+        let pressureInfo = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!)
         temperatureInfoLabel.text = "\(temperatureInfo) °C"
     }
     
