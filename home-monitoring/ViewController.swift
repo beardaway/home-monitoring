@@ -19,7 +19,7 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     let beaconConnectionStatusPopUp = UIAlertController(title: "Detecting beacon", message: "Looks like you're not connected to the beacon yet. Wait a few seconds!", preferredStyle: UIAlertControllerStyle.alert)
     
     var monitoringDevice: ESTDeviceLocationBeacon?
-    let monitoringDeviceIdentifier: String = "4e4fdfa0dc89ddde6397211621338628"
+    let monitoringDeviceIdentifier: String = "4e4fdfa0dc89ddde6397211621338628" // Add placeholder here
     lazy var monitoringDeviceManager: ESTDeviceManager = {
         let manager = ESTDeviceManager()
         manager.delegate = self
@@ -54,6 +54,7 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         let pressureInfo = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!/100)
         let temperatureInfo = Int((monitoringDevice?.settings?.sensors.temperature.getValue())!)
         
+        // Make enum of that
         switch temperatureInfo {
         case 1...10:
             tempDescriptionLabel.text = "You have really cold in your apartment 😱"

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.beaconManager.delegate = self
         self.beaconManager.requestAlwaysAuthorization()
+        // Add placeholders here
         ESTConfig.setupAppID("home-monitoring-jl5", andAppToken: "f433d2de4223c70c1f057763d665b85d")
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         return true
