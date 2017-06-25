@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ This class controls the flow of connecting to your own beacon and reading its sensors values
+ */
+
 class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate{
     
     
@@ -30,12 +34,39 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         super.viewDidLoad()
         let beaconFilter = ESTDeviceFilterLocationBeacon(identifier: self.monitoringDeviceIdentifier)
         self.monitoringDeviceManager.startDeviceDiscovery(with: beaconFilter)
+        pressureDescriptionLabel.adjustsFontSizeToFitWidth = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.present(beaconConnectionStatusPopUp, animated: true, completion: nil)
         
+    }
+    
+    func checkTemperatureRange(temperatureToCheck temperature: Int) {
+        switch temperature {
+        case 1...10:
+            tempDescriptionLabel.text = "You have really cold in your apartment 😱"
+        case 11...20:
+            tempDescriptionLabel.text = "Well yep, it some kinda nice but could be warmer 🤔"
+        case 21...30:
+            tempDescriptionLabel.text = "It is super-hot in here 😎👙"
+        default:
+            tempDescriptionLabel.text = "Your temperature is really weird 😜"
+        }
+    }
+    
+    func checkPressureRange(pressureToCheck pressure: Int) {
+        switch pressure {
+        case 980...1000:
+            pressureDescriptionLabel.text = "You ma be dizzy 😱"
+        case 1001...1020:
+            pressureDescriptionLabel.text = "Perfect! You can do your best 💪"
+        case 1021...1050:
+            pressureDescriptionLabel.text = "Oh nooo headache is coming 😭"
+        default:
+            pressureDescriptionLabel.text = "Your pressure is really weird 😜"
+        }
     }
     
     func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
@@ -51,23 +82,14 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         
         self.beaconConnectionStatusPopUp.dismiss(animated: true, completion: nil)
         
-        let pressureInfo = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!/100)
-        let temperatureInfo = Int((monitoringDevice?.settings?.sensors.temperature.getValue())!)
+        let pressurehPA = Int((monitoringDevice?.settings?.sensors.pressure.getValue())!/100)
+        let temperatureCelsius = Int((monitoringDevice?.settings?.sensors.temperature.getValue())!)
         
-        // Make enum of that
-        switch temperatureInfo {
-        case 1...10:
-            tempDescriptionLabel.text = "You have really cold in your apartment 😱"
-        case 11...20:
-            tempDescriptionLabel.text = "Well yep, it some kinda nice but could be warmer 🤔"
-        case 21...30:
-            tempDescriptionLabel.text = "It is super-hot in here 😎👙"
-        default:
-            tempDescriptionLabel.text = "Your temperature is really weird, better do something with that 🙋‍♂️🙋"
-        }
+        checkTemperatureRange(temperatureToCheck: temperatureCelsius)
+        checkPressureRange(pressureToCheck: pressurehPA)
         
-        temperatureInfoLabel.text = "\(temperatureInfo) °C"
-        pressureInfoLabel.text = "\(pressureInfo) hPa"
+        temperatureInfoLabel.text = "\(temperatureCelsius) °C"
+        pressureInfoLabel.text = "\(pressurehPA) hPa"
     }
     
     func estDevice(_ device: ESTDeviceConnectable, didFailConnectionWithError error: Error) {
