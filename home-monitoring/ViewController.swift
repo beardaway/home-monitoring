@@ -14,7 +14,6 @@ import UIKit
 
 class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate{
     
-    
     @IBOutlet weak var tempDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureInfoLabel: UILabel!
     @IBOutlet weak var pressureInfoLabel: UILabel!
@@ -41,7 +40,6 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.present(beaconConnectionStatusPopUp, animated: true, completion: nil)
-        
     }
     
     func checkTemperatureRange(temperatureToCheck temperature: Int) {
@@ -100,6 +98,4 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
         print("Connection Output Status: Disconnected")
     }
-
 }
-
