@@ -23,6 +23,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         return true
     }
-
 }
-
