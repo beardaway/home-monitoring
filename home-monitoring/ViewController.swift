@@ -21,6 +21,8 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
     
     let beaconConnectionStatusPopUp = UIAlertController(title: "Detecting beacon", message: "Looks like you're not connected to the beacon yet. Wait a few seconds!", preferredStyle: UIAlertControllerStyle.alert)
     
+    // MARK: Class properties
+    
     var monitoringDevice: ESTDeviceLocationBeacon?
     // Insert your beacon identifier here to compile
     let monitoringDeviceIdentifier: String = <#Your beacon identifier#>
@@ -29,6 +31,8 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         manager.delegate = self
         return manager
     }()
+ 
+    // MARK: ViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,8 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         super.viewDidAppear(animated)
         self.present(beaconConnectionStatusPopUp, animated: true, completion: nil)
     }
+ 
+    // MARK: Temperature and pressure checker functions
     
     func checkTemperatureRange(temperatureToCheck temperature: Int) {
         switch temperature {
@@ -68,6 +74,8 @@ class ViewController: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConne
         }
     }
     
+    // MARK: ESTDeviceManagerDelegate methods
+ 
     func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
         guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
         self.monitoringDeviceManager.stopDeviceDiscovery()
