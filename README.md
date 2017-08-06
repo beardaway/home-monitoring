@@ -1,3 +1,9 @@
+<b> Note </b>
+
+To launch the app you need to insert your beacon identifier, AppID and AppToken
+
+------------------------------------------------------
+
 ## Home monitoring app
 This repo contains the iOS App that with use of Estimote beacons let  you check temperature and pressure inside your house.
 
