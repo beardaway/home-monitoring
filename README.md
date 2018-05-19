@@ -17,7 +17,6 @@ By simply adding Estimote iOS SDK to your project you can change its possibiliti
 
 #### App snapshots
 
-<a href="https://imgbb.com/"><img src="https://image.ibb.co/f8An75/some.png" alt="some" border="0"></a><br/>
-
+![](/IntroAssets/introImage.png)
 
 Copyright © konrad.sopala@gmail.com
