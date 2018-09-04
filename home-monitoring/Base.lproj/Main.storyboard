@@ -1,119 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="home_monitoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-Lg-Nos">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MonitoringScreen" translatesAutoresizingMaskIntoConstraints="NO" id="iaL-8l-YWW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temperature" translatesAutoresizingMaskIntoConstraints="NO" id="n0v-Fk-zu9">
-                                <rect key="frame" x="69" y="88" width="83" height="140"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk6-df-8ys">
+                                <rect key="frame" x="37" y="406" width="300" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="n0v-Fk-zu9" secondAttribute="height" multiplier="83:140" id="cdj-oy-04L"/>
+                                    <constraint firstAttribute="height" constant="44" id="KDe-dV-Fcs"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My5-UW-seh">
-                                <rect key="frame" x="69" y="262" width="83" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="My5-UW-seh" secondAttribute="height" multiplier="83:21" id="GeS-M2-oRD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's check the temperature" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-Rr-Aq1">
-                                <rect key="frame" x="186" y="126" width="151" height="65"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pressure" translatesAutoresizingMaskIntoConstraints="NO" id="XIK-CL-HYa">
-                                <rect key="frame" x="44" y="440" width="132" height="129"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Di-eS-ifp">
+                                <rect key="frame" x="37" y="587" width="300" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="XIK-CL-HYa" secondAttribute="height" multiplier="44:43" id="47O-xU-2fM"/>
-                                    <constraint firstAttribute="height" constant="129" id="Jfa-wa-FiX"/>
+                                    <constraint firstAttribute="height" constant="44" id="1vb-Hx-jOq"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hPa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ss-Ph-htQ">
-                                <rect key="frame" x="69" y="592" width="83" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="L6Q-dg-z77"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's check the pressure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zz-N8-w62">
-                                <rect key="frame" x="184" y="479" width="151" height="46.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="leading" secondItem="n0v-Fk-zu9" secondAttribute="trailing" constant="34" id="8IX-Cd-w8P"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLk-Lg-Nos" secondAttribute="bottom" id="Ax0-WB-X8l"/>
-                            <constraint firstItem="My5-UW-seh" firstAttribute="top" secondItem="n0v-Fk-zu9" secondAttribute="bottom" constant="34" id="CF4-IV-Bqa"/>
-                            <constraint firstItem="NLk-Lg-Nos" firstAttribute="leading" secondItem="n0v-Fk-zu9" secondAttribute="trailing" constant="-152" id="CPL-vF-7NZ"/>
-                            <constraint firstItem="NLk-Lg-Nos" firstAttribute="leading" secondItem="XIK-CL-HYa" secondAttribute="trailing" constant="-176" id="DdX-Jd-LTK"/>
-                            <constraint firstItem="8Zz-N8-w62" firstAttribute="top" secondItem="NLk-Lg-Nos" secondAttribute="bottom" constant="-188" id="GPG-JX-Rps"/>
-                            <constraint firstItem="8Zz-N8-w62" firstAttribute="leading" secondItem="XIK-CL-HYa" secondAttribute="trailing" constant="8" id="ICH-bS-rbr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ss-Ph-htQ" secondAttribute="bottom" constant="54" id="ILN-bB-UrF"/>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="leading" secondItem="8Zz-N8-w62" secondAttribute="leading" constant="2" id="Ia0-4P-NOD"/>
-                            <constraint firstItem="8Zz-N8-w62" firstAttribute="width" secondItem="NLk-Lg-Nos" secondAttribute="height" multiplier="151:667" id="J2P-tK-yed"/>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="leading" secondItem="NLk-Lg-Nos" secondAttribute="trailing" constant="-189" id="KG8-vK-ib8"/>
-                            <constraint firstItem="NLk-Lg-Nos" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OjX-js-IFl"/>
-                            <constraint firstItem="3ss-Ph-htQ" firstAttribute="leading" secondItem="My5-UW-seh" secondAttribute="leading" id="Rrb-QV-9ho"/>
-                            <constraint firstItem="XIK-CL-HYa" firstAttribute="centerX" secondItem="My5-UW-seh" secondAttribute="centerX" id="SPQ-Bz-aEU"/>
-                            <constraint firstItem="8Zz-N8-w62" firstAttribute="leading" secondItem="NLk-Lg-Nos" secondAttribute="trailing" constant="-191" id="Sn8-Uw-w99"/>
-                            <constraint firstItem="3ss-Ph-htQ" firstAttribute="top" secondItem="XIK-CL-HYa" secondAttribute="bottom" constant="23" id="Uup-cW-ybf"/>
-                            <constraint firstItem="XIK-CL-HYa" firstAttribute="centerX" secondItem="n0v-Fk-zu9" secondAttribute="centerX" id="Vjq-JN-Ib3"/>
-                            <constraint firstItem="NLk-Lg-Nos" firstAttribute="top" secondItem="n0v-Fk-zu9" secondAttribute="bottom" constant="-228" id="W2r-1w-SRi"/>
-                            <constraint firstAttribute="trailing" secondItem="NLk-Lg-Nos" secondAttribute="trailing" id="eE4-3w-OzV"/>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="trailing" secondItem="8Zz-N8-w62" secondAttribute="trailing" constant="2" id="eq4-nL-IAy"/>
-                            <constraint firstItem="NLk-Lg-Nos" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hMV-fb-276"/>
-                            <constraint firstItem="My5-UW-seh" firstAttribute="width" secondItem="NLk-Lg-Nos" secondAttribute="height" multiplier="83:667" id="j5G-l8-wft"/>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="centerY" secondItem="n0v-Fk-zu9" secondAttribute="centerY" id="jxE-mn-GxN"/>
-                            <constraint firstItem="3ss-Ph-htQ" firstAttribute="trailing" secondItem="My5-UW-seh" secondAttribute="trailing" id="qGC-4I-Y9C"/>
-                            <constraint firstItem="BAE-Rr-Aq1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="sQI-22-esT"/>
-                            <constraint firstItem="n0v-Fk-zu9" firstAttribute="width" secondItem="NLk-Lg-Nos" secondAttribute="height" multiplier="83:667" id="z5Y-I6-EDf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Di-eS-ifp" secondAttribute="bottom" constant="147" id="41f-FK-SZx"/>
+                            <constraint firstItem="iaL-8l-YWW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kr0-qB-IaX"/>
+                            <constraint firstItem="Bk6-df-8ys" firstAttribute="leading" secondItem="2Di-eS-ifp" secondAttribute="leading" id="ME2-X9-l46"/>
+                            <constraint firstItem="2Di-eS-ifp" firstAttribute="centerX" secondItem="iaL-8l-YWW" secondAttribute="centerX" id="QC2-ba-9sl"/>
+                            <constraint firstItem="Bk6-df-8ys" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="QV4-1e-Rwd"/>
+                            <constraint firstItem="iaL-8l-YWW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TuI-hI-TdS"/>
+                            <constraint firstAttribute="trailing" secondItem="iaL-8l-YWW" secondAttribute="trailing" id="dor-SW-lPt"/>
+                            <constraint firstItem="Bk6-df-8ys" firstAttribute="centerX" secondItem="iaL-8l-YWW" secondAttribute="centerX" id="hac-G2-ub0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iaL-8l-YWW" secondAttribute="bottom" id="qOY-Y6-L12"/>
+                            <constraint firstItem="Bk6-df-8ys" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="362" id="sgl-p3-jCj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pressureDescriptionLabel" destination="8Zz-N8-w62" id="j9d-Us-nl5"/>
-                        <outlet property="pressureInfoLabel" destination="3ss-Ph-htQ" id="PKb-KU-hqi"/>
-                        <outlet property="tempDescriptionLabel" destination="BAE-Rr-Aq1" id="A8u-s5-wed"/>
-                        <outlet property="temperatureInfoLabel" destination="My5-UW-seh" id="LfA-bH-kGV"/>
+                        <outlet property="pressureLabel" destination="2Di-eS-ifp" id="eGx-mo-wOT"/>
+                        <outlet property="temperatureLabel" destination="Bk6-df-8ys" id="ZLO-ER-Hq4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="375" height="667"/>
-        <image name="Pressure" width="163" height="163"/>
-        <image name="Temperature" width="95" height="229"/>
+        <image name="MonitoringScreen" width="375" height="667"/>
     </resources>
 </document>

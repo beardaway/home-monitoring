@@ -18,9 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.beaconManager.delegate = self
         self.beaconManager.requestAlwaysAuthorization()
-        // Insert your APPId and APPToken here to compile (from Estimote Cloud)
+        
+        // TODO: Insert your APPId and APPToken here to compile (from Estimote Cloud)
         ESTConfig.setupAppID(<#Your AppID#>, andAppToken: <#Your AppToken#>)
+        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
         return true
     }
 }
