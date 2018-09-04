@@ -13,8 +13,8 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 
 ### Features
 
-- Swift
-- Estimote Beacons (Estimote SDK)
+- <img src="https://img.shields.io/badge/Swift-4.2-green.svg" alt="swift version"/>
+- Estimote Beacons ([Estimote SDK](https://github.com/Estimote/iOS-SDK))
 
 ### App Screenshots
 
