@@ -18,7 +18,7 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 ### Frameworks
 
 - UIKit
-- [Estimote SDK](https://github.com/Estimote/iOS-SDK))
+- [Estimote SDK](https://github.com/Estimote/iOS-SDK)
 
 ### App Screenshots
 
