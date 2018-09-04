@@ -8,8 +8,8 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 
 **To launch the app you need to:**
 
-- Insert your beacon identifier in ViewController.swift 
-- InsertAppID and AppToken in the AppDelegate.swift
+- Insert your [beacon identifier](https://community.estimote.com/hc/en-us/articles/360004586632-How-to-find-a-beacon-s-identifier) in ViewController.swift 
+- [InsertAppID and AppToken](https://community.estimote.com/hc/en-us/articles/203607313-What-are-App-ID-and-App-Token-and-what-do-I-need-them-for-) in the AppDelegate.swift
 
 ### Features
 
