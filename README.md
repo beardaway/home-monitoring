@@ -1,5 +1,7 @@
 # Home Monitoring
 
+<a href="https://estimote.com/"><img src="https://img.shields.io/badge/Estimote-Beacons-blueviolet" alt=""/></a>    <a href="https://estimote.com/products/"><img src="https://img.shields.io/badge/Physical-World-blueviolet" alt=""/></a>  <a href="https://developer.estimote.com/"><img src="https://img.shields.io/badge/Software-Defined-blueviolet" alt=""/></a>
+
 ### App Description
 
 This repo contains the iOS App that with use of Estimote beacons let  you check temperature and pressure inside your house. By simply adding Estimote iOS SDK to your project you can change its possibilities in an amazing way. Just let yourself experience creating whole new contextual environment.
@@ -13,7 +15,7 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 
 ### Swift Version
 
-- <img src="https://img.shields.io/badge/Swift-4.2-green.svg" alt="swift version"/>
+- <a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.2-green.svg" alt=""/></a>
 
 ### Frameworks
 
