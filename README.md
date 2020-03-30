@@ -1,5 +1,7 @@
 # Home Monitoring
 
+![](/Assets/HomeMonitoring.png)
+
 <a href="https://estimote.com/"><img src="https://img.shields.io/badge/Estimote-Beacons-blueviolet" alt=""/></a>    <a href="https://estimote.com/products/"><img src="https://img.shields.io/badge/Physical-World-blueviolet" alt=""/></a>  <a href="https://developer.estimote.com/"><img src="https://img.shields.io/badge/Software-Defined-blueviolet" alt=""/></a>
 
 ### App Description
@@ -10,7 +12,7 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 
 **To launch the app you need to:**
 
-- Insert your [beacon identifier](https://community.estimote.com/hc/en-us/articles/360004586632-How-to-find-a-beacon-s-identifier) in ViewController.swift 
+- Insert your [beacon identifier](https://community.estimote.com/hc/en-us/articles/360004586632-How-to-find-a-beacon-s-identifier) in ViewController.swift
 - Insert [AppID and AppToken](https://community.estimote.com/hc/en-us/articles/203607313-What-are-App-ID-and-App-Token-and-what-do-I-need-them-for-) in the AppDelegate.swift
 
 ### Swift Version
@@ -24,7 +26,7 @@ This repo contains the iOS App that with use of Estimote beacons let  you check 
 
 ### App Screenshots
 
-![](/IntroAssets/AppScreens.png)
+![](/Assets/AppScreens.png)
 
 ### Icons
 
